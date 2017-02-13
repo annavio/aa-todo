@@ -13,5 +13,10 @@
 						Liste de tâches
 					%p
 						Ici, vous pouvez gérer les tâches que vous avez à faire!
-					= link_to 'Ajouter une tâche', new_task_path,  class:  'btn btn-primary', remote: true
+					.text-center
+						= link_to 'Ajouter une tâche', new_task_path,  class:  'btn btn-primary', remote: true
+					.text-center
+						%strong= current_user.email
+					.text-center
+						= link_to 'logout', destroy_user_session_path, method: :delete
 		= yield
